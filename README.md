@@ -32,7 +32,7 @@ https://slugs.do-api.dev
 ## Environment variables:
 
 ```java
-variable "do_token" {}    # set via environment value `TF_VAR_do_token`
+
 ```
 
 ## user interfaces:
