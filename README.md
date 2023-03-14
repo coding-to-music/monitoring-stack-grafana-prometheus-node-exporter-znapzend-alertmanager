@@ -302,7 +302,7 @@ ansible all -a "df -h" -u root
 
 Output
 
-```
+```java
 server1 | CHANGED | rc=0 >>
 Filesystem      Size  Used Avail Use% Mounted on
 udev            3.9G     0  3.9G   0% /dev
@@ -326,21 +326,30 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 tmpfs           395M     0  395M   0% /run/user/0
 ```
 
-...
 The highlighted command df -h can be replaced by any command you’d like.
 
 You can also execute Ansible modules via ad-hoc commands, similarly to what we’ve done before with the ping module for testing connection. For example, here’s how we can use the apt module to install the latest version of vim on all the servers in your inventory:
 
+```java
 ansible all -m apt -a "name=vim state=latest" -u root
+```
+
 You can also target individual hosts, as well as groups and subgroups, when running Ansible commands. For instance, this is how you would check the uptime of every host in the servers group:
 
+```java
 ansible servers -a "uptime" -u root
+```
+
 We can specify multiple hosts by separating them with colons:
 
+```java
 ansible server1:server2 -m ping -u root
+```
+
 For more information on how to use Ansible, including how to execute playbooks to automate server setup, you can check our Ansible Reference Guide.
 
-Conclusion
+### Conclusion
+
 In this guide, you’ve installed Ansible and set up an inventory file to execute ad-hoc commands from an Ansible Control Node.
 
 Once you’ve confirmed you’re able to connect and control your infrastructure from a central Ansible controller machine, you can execute any command or playbook you desire on those hosts.
