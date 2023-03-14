@@ -189,6 +189,12 @@ Your Ansible control node now has all of the software required to administer you
 
 ## Step 2 — Setting Up the Inventory File
 
+get your own IP address
+
+```java
+hostname -I
+```
+
 The inventory file contains information about the hosts you’ll manage with Ansible. You can include anywhere from one to several hundred servers in your inventory file, and hosts can be organized into groups and subgroups. The inventory file is also often used to set variables that will be valid only for specific hosts or groups, in order to be used within playbooks and templates. Some variables can also affect the way a playbook is run, like the ansible_python_interpreter variable that we’ll see in a moment.
 
 To edit the contents of your default Ansible inventory, open the /etc/ansible/hosts file using your text editor of choice, on your Ansible control node:
