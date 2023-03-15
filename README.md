@@ -106,6 +106,10 @@ git clone https://github.com/45drives/monitoring-stack.git
 ```sh
 cd /usr/share/monitoring-stack
 ansible-playbook -i hosts deploy-monitoring.yml
+
+or
+
+ansible-playbook -i hosts deploy-monitoring.yml -u xrdpuser -kK
 ```
 
 - To uninstall monitoring stack
