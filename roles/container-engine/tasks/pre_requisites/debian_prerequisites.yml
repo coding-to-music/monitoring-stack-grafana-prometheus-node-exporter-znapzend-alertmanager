@@ -1,20 +1,26 @@
 ---
 - name: uninstall old docker versions
   package:
-    name: ['docker', 'docker-engine', 'docker.io', 'containerd', 'runc']
+    name: ["docker", "docker-engine", "docker.io", "containerd", "runc"]
     state: absent
   when: container_package_name == 'docker-ce'
 
 - name: allow apt to use a repository over https (debian)
   package:
-    name: ['apt-transport-https', 'ca-certificates', 'gnupg', 'software-properties-common']
+    name:
+      [
+        "apt-transport-https",
+        "ca-certificates",
+        "gnupg",
+        "software-properties-common",
+      ]
     update_cache: yes
   register: result
   until: result is succeeded
 
 - name: add docker's gpg key
   apt_key:
-    url: 'https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg'
+    url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
   register: result
   until: result is succeeded
   when: container_package_name == 'docker-ce'
@@ -34,7 +40,7 @@
 
 - name: add podman kubic gpg key
   apt_key:
-    url: 'https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_{{ ansible_distribution_version }}/Release.key'
+    url: "https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_{{ ansible_distribution_version }}/Release.key"
     state: present
   register: result
   until: result is succeeded
