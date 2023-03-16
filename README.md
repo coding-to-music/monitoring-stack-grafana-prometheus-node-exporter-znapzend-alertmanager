@@ -125,6 +125,10 @@ ansible-playbook -i hosts deploy-monitoring.yml
 or
 
 ansible-playbook -i hosts deploy-monitoring.yml -u xrdpuser -kK
+
+or 
+
+ansible-playbook -i hosts deploy-monitoring.yml --ask-become-pass
 ```
 
 - To uninstall monitoring stack
