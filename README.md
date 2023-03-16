@@ -70,6 +70,21 @@ git push -u origin main
 The services outlined above are deployed as containers using either podman or docker depending on Host OS.
 Containers are managed via systemd services and/or cockpit-podman module
 
+## Pre-install of firewalld may be needed
+
+```sh
+sudo apt-get install firewalld
+```
+Install and use RHEL default firewall Firewalld on Ubuntu 20.04 - masquerading, port forwarding, ingress, egress, proxy, block, rules
+
+https://github.com/coding-to-music/coding-to-music.github.io/issues/281
+
+
+Ansible error using firewalld on Ubuntu (Solved) - Python Module not found: firewalld and its python module are required
+
+https://github.com/coding-to-music/coding-to-music.github.io/issues/297
+
+
 # Installation
 
 - Clone git repo to "/usr/share"
