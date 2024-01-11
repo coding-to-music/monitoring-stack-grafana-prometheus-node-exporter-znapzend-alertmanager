@@ -116,11 +116,28 @@ git clone https://github.com/45drives/monitoring-stack.git
 | Node Exporter Port       | 9100  |
 | Znapzend Port            | 9101  |
 
+- verify inventory is working
+
+```java
+ansible-inventory -i inventory --list
+
+ansible-inventory -i hosts --list
+
+ansible myhosts -m ping -i inventory
+
+ansible myhosts -m ping -i hosts
+
+```
+
 - Run metrics playbook
 
 ```sh
 cd /usr/share/monitoring-stack
 ansible-playbook -i hosts deploy-monitoring.yml
+
+or
+
+ansible-playbook -i inventory deploy-monitoring.yml
 
 or
 

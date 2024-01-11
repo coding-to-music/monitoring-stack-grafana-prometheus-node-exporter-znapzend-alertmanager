@@ -9,6 +9,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - xenial
+        - jammy
     - name: EL
       versions:
         - 7

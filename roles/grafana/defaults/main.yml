@@ -2,7 +2,7 @@ container_binary: podman
 grafana_admin_user: admin
 grafana_admin_password: admin
 grafana_port: 3000
-grafana_default_theme: light
+grafana_default_theme: dark
 grafana_anonymous_access: 'true'
 grafana_protocol: 'http'
 grafana_crt: ''

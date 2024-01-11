@@ -4,3 +4,5 @@ hosts
 .env
 junk.txt
 .vscode
+inventory.ini
+inventory
