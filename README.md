@@ -156,6 +156,22 @@ ansible-playbook -i inventory deploy-monitoring.yml --ask-become-pass
 ansible-playbook -i hosts purge-monitoring.yml
 ```
 
+### View status of jobs on servers
+
+rlogin user@ip_address
+
+```java
+docker ps
+
+sudo systemctl list-units --state=degraded
+
+sudo systemctl list-units --state=failed
+
+sudo systemctl list-units
+
+sudo systemctl status
+```
+
 # Verification
 
 To ensure monitoring stack is working as expected, simulate failure condition and you will recieve an email notification
