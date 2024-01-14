@@ -1,12 +1,12 @@
 apiVersion: 1
 
 providers:
-- name: 'Loki Dashboards'
+- name: 'Bikeshare Dashboards'
   orgId: 1
-  folder: 'loki'
+  folder: 'bikeshare'
   type: file
   disableDeletion: false
   updateIntervalSeconds: 3
   editable: false
   options:
-    path: '{{ grafana_dashboards_path }}/loki'
+    path: '{{ grafana_dashboards_path }}/bikeshare'

@@ -126,7 +126,32 @@ ansible-inventory -i hosts --list
 ansible myhosts -m ping -i inventory
 
 ansible myhosts -m ping -i hosts
+```
 
+## Install ansible collections for Grafana
+
+https://docs.ansible.com/ansible/latest/collections/grafana/grafana/folder_module.html
+
+https://github.com/grafana/grafana-ansible-collection
+
+see what collections are already installed
+
+```java
+ansible-galaxy collection list
+
+ansible-galaxy collection list | grep grafana
+```
+
+Output
+
+```java
+grafana.grafana   2.2.4  
+```
+
+Install Ansible Grafana collection
+
+```java
+ansible-galaxy collection install grafana.grafana
 ```
 
 - Run metrics playbook
