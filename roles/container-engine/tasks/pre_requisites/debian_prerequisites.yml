@@ -14,12 +14,26 @@
       - apt-transport-https
       - ca-certificates
       - curl
+      - nmap
+      - firewalld
       - software-properties-common
       - python3-pip
       - virtualenv
       - python3-setuptools
     state: latest
     update_cache: true
+
+- name: Firewalld Enable Test Task
+  firewalld:
+    service: https
+    state: enabled
+  vars:
+    ansible_python_interpreter: '/usr/bin/python3'
+
+- name: Set hostname
+  ansible.builtin.hostname:
+    name: "{{ inventory_hostname }}"
+  with_items: "{{ groups['myhosts'] }}"
 
 # - name: uninstall old docker versions
 #   package:

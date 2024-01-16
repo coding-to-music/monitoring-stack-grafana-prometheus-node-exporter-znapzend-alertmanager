@@ -1,4 +1,14 @@
 ---
+# - name: Display all open ports
+#   hosts: all
+#   tasks:
+#     - name: Gather facts on listening ports
+#       community.general.listen_ports_facts:
+#       register: result
+
+#     - debug:
+#         var: result.ansible_facts.tcp_listen
+        
 - hosts: all
   become: true
   tasks:
@@ -23,3 +33,14 @@
             name: prometheus
         - import_role:
             name: grafana
+
+- name: Display all open ports
+  hosts: all
+  tasks:
+    - name: Gather facts on listening ports
+      community.general.listen_ports_facts:
+      register: result
+
+    - debug:
+        var: result.ansible_facts.tcp_listen
+        
