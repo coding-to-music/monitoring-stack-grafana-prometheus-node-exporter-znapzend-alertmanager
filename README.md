@@ -145,16 +145,26 @@ ansible-galaxy collection list | grep grafana
 Output
 
 ```java
+Collection        Version
+----------------- -------
+ansible.posix     1.5.4  
+community.general 8.2.0  
 grafana.grafana   2.2.4  
 ```
 
-Install Ansible Grafana collection
+Install Ansible Grafana collection if not already installed
 
 ```java
 ansible-galaxy collection install grafana.grafana
 ```
 
-- Run metrics playbook
+Install Ansible influxdb collection if not already installed
+
+```java
+ansible-galaxy collection install boutetnico.ansible-role-influxdb
+```
+
+## Run metrics playbook
 
 ```sh
 cd /usr/share/monitoring-stack
